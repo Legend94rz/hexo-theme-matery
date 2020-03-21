@@ -30,11 +30,23 @@
 
 </main>
 
-<% if (theme.mathjax.enable && page.mathjax) { %>
-<script src="<%- theme.mathjax.cdn %>"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
+<% if (page.math) { %>
+    <%if (theme.math.engine=='mathjax') { %>
+        <script src="<%- theme.math.mathjax.cdn %>"></script>
+        <script>
+            MathJax.Hub.Config({
+                tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+            });
+        </script>
+    <% } %>
+    <%if (theme.math.engine=='katex') { %>
+        <link rel="stylesheet" href="<%- theme.math.katex.cdn_prefix %>katex.min.css" crossorigin="anonymous">
+        <script defer src="<%- theme.math.katex.cdn_prefix %>katex.min.js" crossorigin="anonymous"></script>
+        <script defer src="<%- theme.math.katex.cdn_prefix %>contrib/auto-render.min.js" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    <% } %>
+<% } %>
+
+<% if (theme.code.highlight) { %>
+    <link href="<%-theme.libs.css.prism%>" rel="stylesheet" />
+    <script src="<%-theme.libs.js.prism%>"></script>
 <% } %>

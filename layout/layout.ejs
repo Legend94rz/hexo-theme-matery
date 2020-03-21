@@ -28,7 +28,7 @@
     <% } %>
 
     <% if (theme.tidio.enable) { %>
-        <script src="//code.tidio.co/<%- theme.tidio.public_key %>.js"></script>
+        <script async src="//code.tidio.co/<%- theme.tidio.public_key %>.js"></script>
         <script> 
             $(document).ready(function () {
                 setInterval(change_Tidio, 50);  

@@ -16,6 +16,10 @@
                     <% if (theme.dream.enable) { %>
                         <%- partial('_widget/dream') %>
                     <% } %>
+                    
+                    <% if (theme.poetry.enable) { %>
+                        <%- partial('_widget/poetry') %>
+                    <% } %>
 
                     <% if (theme.music.enable && !theme.music.fixed) { %>
                         <%- partial('_widget/music') %>

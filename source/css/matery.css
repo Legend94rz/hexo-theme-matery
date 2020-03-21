@@ -30,6 +30,9 @@
         width: 90%;
         margin: 0 auto;
         max-width: 1250px;
+        text-shadow: 1px 1px 1px rgba(0,0,0,.004);
+        text-rendering: optimizeLegibility!important;
+        -webkit-font-smoothing: antialiased!important;
     }
 }
 
@@ -112,16 +115,16 @@ blockquote {
 }
 
 pre {
-    padding: 2.5rem 1.5rem 1.5rem 1.5rem !important;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem !important;
     margin: 1rem 0 !important;
-    background: #272822;
+    /*background: #272822;
     overflow: auto;
-    border-radius: 0.35rem;
+    border-radius: 0.35rem;*/
     tab-size: 4;
 }
 
 .code-area::after {
-    content: " ";
+    /*content: " ";*/
     position: absolute;
     border-radius: 50%;
     background: #ff5f56;
@@ -1179,7 +1182,7 @@ article .article-tags .chip {
     text-indent: 0.2rem;
 }
 
-#articleContent a {
+#articleContent a:not(code a) {
     padding: 0 2px;
     color: #42b983;
     font-weight: 500;
@@ -2132,4 +2135,37 @@ footer .copy-right {
     height: 50px;
     padding: 0px;
     margin: 0px;
+}
+
+.heavy-font{
+    font-weight: 900;
+}
+.bold-font{
+    font-weight: 700;
+}
+.semibold-font{
+    font-weight: 600;
+}
+.medium-font{
+    font-weight: 500;
+}
+.regular-font{
+    font-weight: 400;
+}
+.light-font{
+    font-weight: 300;
+}
+.extralight-font{
+    font-weight: 200;
+}
+div:target:before {
+    margin-top:-100px;
+    content:' ';
+    display:block;
+    visibility:hidden;
+    height:100px;
+}
+
+html {
+    font-family: source-han-serif-tc,serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
 }
